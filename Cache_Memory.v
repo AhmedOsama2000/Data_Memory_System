@@ -83,20 +83,6 @@ always @(posedge CLK,negedge rst_n) begin
 			cache_word3[index_mapping] <= Data_in;
 		end
 	end
-	else if (Mem_Rd && !Miss) begin
-		if (offset_mapping == 2'b00) begin
-			Data_out <= cache_word0[index_mapping];
-		end
-		else if (offset_mapping == 2'b01) begin
-			Data_out <= cache_word1[index_mapping];
-		end
-		else if (offset_mapping == 2'b10) begin
-			Data_out <= cache_word2[index_mapping];
-		end
-		else begin
-			Data_out <= cache_word3[index_mapping];
-		end
-	end
 
 end
 
